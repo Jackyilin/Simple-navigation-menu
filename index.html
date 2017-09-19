@@ -2,83 +2,96 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>我的</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .wrap{
+            margin: 20px;
+        }
+        .wrap a{
+            display: inline-block;
+        }
+        .menu>a{
+            width:80px;
+            padding-right: 50px;
+            background-image: url("images/down.gif");
+            background-repeat: no-repeat;
+            background-position: 4px center;
+        }
+        ul{
+            list-style: none;
+            float: left;
+            padding-right: 50px;
+            background: #0f0;
+            width: 80px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .menu>ul{
+            display: none;
+        }
+        .menu>ul a{
+            margin-left: 20px;
+        }
+    </style>
 </head>
 <body>
+<div class="wrap">
     <ul>
-        <li class="main">
-            <a href="#">菜单项1</a>
+        <li class="menu">
+            <a herf="#">菜单1</a>
             <ul>
                 <li>
-                    <a href="#">子菜单11</a>
+                    <a herf="#">菜单11</a>
                 </li>
                 <li>
-                    <a href="#">子菜单12</a>
-                </li>
-            </ul>
-        </li>
-        <li class="main">
-            <a href="#">菜单项2</a>
-            <ul>
-                <li>
-                    <a href="#">子菜单21</a>
-                </li>
-                <li>
-                    <a href="#">子菜单22</a>
-                </li>
-            </ul>
-        </li>
-        <li class="main">
-            <a href="#">菜单项3</a>
-            <ul>
-                <li>
-                    <a href="#">子菜单31</a>
-                </li>
-                <li>
-                    <a href="#">子菜单32</a>
+                    <a herf="#">菜单12</a>
                 </li>
             </ul>
         </li>
     </ul>
-    <br>
-    <br>
     <ul>
-        <li class="hmain">
-            <a href="#">菜单项1</a>
+        <li class="menu">
+            <a herf="#">菜单2</a>
             <ul>
                 <li>
-                    <a href="#">子菜单11</a>
+                    <a herf="#">菜单21</a>
                 </li>
                 <li>
-                    <a href="#">子菜单12</a>
-                </li>
-            </ul>
-        </li>
-        <li class="hmain">
-            <a href="#">菜单项2</a>
-            <ul>
-                <li>
-                    <a href="#">子菜单21</a>
-                </li>
-                <li>
-                    <a href="#">子菜单22</a>
-                </li>
-            </ul>
-        </li>
-        <li class="hmain">
-            <a href="#">菜单项3</a>
-            <ul>
-                <li>
-                    <a href="#">子菜单31</a>
-                </li>
-                <li>
-                    <a href="#">子菜单32</a>
+                    <a herf="#">菜单22</a>
                 </li>
             </ul>
         </li>
     </ul>
-    <script src="jquery-1.12.4.min.js"></script>
-    <script src="demo.js"></script>
+    <ul>
+        <li class="menu">
+            <a herf="#">菜单3</a>
+            <ul>
+                <li>
+                    <a herf="#">菜单31</a>
+                </li>
+                <li>
+                    <a herf="#">菜单32</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script src="jquery-1.12.4.min.js"></script>
+<script>
+    $(function(){
+        $(".menu>a").hover(function(){
+            $(this).css("background-image","url('images/up.gif')");
+            $(this).next("ul").stop().slideDown("slow");
+        },function(){
+            $(this).css("background-image","url('images/down.gif')");
+            $(this).next("ul").stop().slideUp("slow");
+        })
+    })
+</script>
+</div>
 </body>
 </html>
